@@ -20,7 +20,7 @@ D headline (error_CF < error_IV, gap grows with s), E sticky-fired concentration
 """
 import numpy as np
 
-from pong_counterfactual.cjepa_rung2.collect_rung2 import collect, UP, DOWN
+from pong_counterfactual.cjepa_rung2.collect_rung2 import collect, UP, DOWN, FRAMESKIP
 from pong_counterfactual.cjepa_rung2.oracle_rung2 import Oracle
 from pong_counterfactual.cjepa_rung1.discretize import Discretizer, DIMS
 from pong_counterfactual.cjepa_rung1.noise import state_vec
@@ -163,7 +163,7 @@ def main():
     print("=" * 78)
     print("CausalJEPA Rung 2 — Gumbel-Max abduction vs intervention under ALE sticky actions")
     print("metric: paddle (player_y) L1 vs the seed-replay oracle CF; move-steps only;")
-    print(f"noise = ALE repeat_action_probability=s (injected wind OFF); frameskip=1; N={N}")
+    print(f"noise = ALE repeat_action_probability=s (injected wind OFF); frameskip={FRAMESKIP}; N={N}")
     print("=" * 78)
 
     rows = [evaluate(s) for s in SS]
