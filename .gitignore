@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# OCAtari editable clone (installed as a dependency, see README)
+OC_Atari/
+
+# Collected datasets / rollouts (regenerate via collect.py)
+pong_counterfactual/**/data/
+pong_counterfactual/**/runs/
+*.npz
+*.pkl
