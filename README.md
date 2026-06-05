@@ -11,7 +11,8 @@ for details on the first rung.
 ## Layout
 
 - `pong_counterfactual/` — counterfactual world-model code
-  - `cjepa_rung1/` — Rung 1: Gumbel-Max abduction vs. intervention baseline against a seed-replay oracle
+  - `cjepa_rung1/` — Rung 1: Gumbel-Max abduction vs. intervention baseline against a seed-replay oracle (self-injected wind noise)
+  - `cjepa_rung2/` — Rung 2: the same test under the environment's OWN noise (ALE sticky actions, `repeat_action_probability=s`) — see [`cjepa_rung2/README.md`](pong_counterfactual/cjepa_rung2/README.md)
 
 ## Setup
 
@@ -32,5 +33,8 @@ pip install -e ./OC_Atari
 
 ```bash
 python -m pong_counterfactual.cjepa_rung1.collect      # collect transitions
-python -m pong_counterfactual.cjepa_rung1.eval_rung1   # evaluate counterfactual accuracy
+python -m pong_counterfactual.cjepa_rung1.eval_rung1   # evaluate counterfactual accuracy (Rung 1)
+
+python -m pong_counterfactual.cjepa_rung2.sticky_probe # GATE: validate sticky-action seed replay
+python -m pong_counterfactual.cjepa_rung2.eval_rung2   # evaluate counterfactual accuracy (Rung 2)
 ```

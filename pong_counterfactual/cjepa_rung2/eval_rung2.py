@@ -82,13 +82,17 @@ def evaluate(s):
     sub = np.random.default_rng(0).choice(len(Xe), min(400, len(Xe)), replace=False)
     top1 = model.top1(Xe[sub], toke[sub])
     sbin = stay_bin(disc)
-    # sticky mass: on move-steps, the model's predicted P(player_y delta == 0 | intended move).
+    # sticky mass: on move-steps, the model's predicted P(player_y delta == 0 | intended
+    # move). Subsampled for speed (full scan is many MLP calls).
+    move_pool = [(ep, k) for ep in eval_eps for k in valid_ks(ep, N, move_only=True)]
+    smr = np.random.default_rng(3)
+    if len(move_pool) > 300:
+        move_pool = [move_pool[i] for i in smr.choice(len(move_pool), 300, replace=False)]
     sticky_mass = []
-    for ep in eval_eps:
-        for k in valid_ks(ep, N, move_only=True):
-            lg = model.logits(hist_features(ep.states, ep.intended, k, N))[2]
-            p = np.exp(lg - lg.max()); p /= p.sum()
-            sticky_mass.append(float(p[sbin]))
+    for ep, k in move_pool:
+        lg = model.logits(hist_features(ep.states, ep.intended, k, N))[2]
+        p = np.exp(lg - lg.max()); p /= p.sum()
+        sticky_mass.append(float(p[sbin]))
     sticky_mass = float(np.mean(sticky_mass)) if sticky_mass else 0.0
 
     # ---- eval pool: move-steps with a valid N-window ---------------------------------
@@ -188,8 +192,9 @@ def main():
     print(f"    {'s':>5} | {'error_CF':>9} | {'error_IV':>9} | {'gap (IV-CF)':>11} | CF<IV?")
     print("    " + "-" * 58)
     for r in rows:
+        verdict = "ctrl" if r["s"] == 0 else ("yes" if r["error_CF"] < r["error_IV"] else "NO")
         print(f"    {r['s']:>5.2f} | {r['error_CF']:>9.3f} | {r['error_IV']:>9.3f} | "
-              f"{r['gap']:>11.3f} | {'yes' if r['error_CF'] < r['error_IV'] else 'NO'}")
+              f"{r['gap']:>11.3f} | {verdict}")
     print("    (4-number L1 secondary:  " +
           " ".join(f"s={r['s']:.2f} gap4={r['gap4']:.2f}" for r in rows) + ")")
 
@@ -205,11 +210,16 @@ def main():
               f"{r['free_CF']:>5.2f} /{r['free_IV']:>5.2f} /{r['free_gap']:>5.2f}")
 
     # ---- C + verdicts ----------------------------------------------------------------
+    # NOTE on D vs C: at s=0 there is NO noise, so abduction has nothing to recover and
+    # error_CF is EXPECTED to equal error_IV -- that is the COLLAPSE CONTROL (check C),
+    # not the headline. The headline (D) is the noise regime s>0, where abduction must
+    # beat intervention. So D is evaluated over s>0; the s=0 row is governed by C. (Same
+    # convention as Rung 1's synthetic control, where the p=0 gap is ~0 of either sign.)
     r0 = rows[0]
+    pos = [r for r in rows if r["s"] > 0]
     ok_A = all(r["noop_reproduces"] > 0.999 and r["oracle_reproduces"] > 0.999 for r in rows)
     ok_C = abs(r0["error_CF"] - r0["error_IV"]) < 0.15      # s=0 collapse (history fed)
-    ok_D = all(r["error_CF"] < r["error_IV"] for r in rows)
-    pos = [r for r in rows if r["s"] > 0]
+    ok_D = all(r["error_CF"] < r["error_IV"] for r in pos)  # headline: noise regime only
     gap_grows = rows[-1]["gap"] > rows[1]["gap"]            # gap at s=0.5 exceeds s=0.1
     stuck_gaps = [r["stuck_gap"] for r in pos if r["n_stuck"] >= 5]
     free_gaps = [r["free_gap"] for r in pos]
@@ -219,7 +229,8 @@ def main():
     print(f"PASS A (abduction + oracle consistent, 100%):              {ok_A}")
     print(f"PASS C (s=0 collapse: error_CF ~= error_IV, both small):   {ok_C}  "
           f"(|CF-IV|={abs(r0['error_CF']-r0['error_IV']):.3f})")
-    print(f"PASS D (abduction beats intervention at every s):          {ok_D}")
+    print(f"PASS D (abduction beats intervention at every s>0):        {ok_D}  "
+          f"(s=0 is the collapse control, governed by C)")
     print(f"   .. and the gap grows with s (s=0.5 > s=0.1):            {gap_grows}")
     print(f"PASS E (advantage concentrated on sticky-fired steps):     {ok_E}")
     print("=" * 78)
