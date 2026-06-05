@@ -39,20 +39,27 @@ class PongEnv:
     """Deterministic Pong wrapper. step()/reset() return the 4-number object state.
 
     Determinism is enforced at construction:
-      - repeat_action_probability=0.0  -> no sticky-action noise
+      - repeat_action_probability=0.0  -> no sticky-action noise (the default)
       - frameskip=4 fixed              -> no random frameskip
       - reset(seed=...)                -> fixes the ALE RNG
     Same seed + same action sequence  ==>  byte-identical trajectory.
+
+    Rung 2 passes repeat_action_probability=s to turn ON ALE's built-in sticky
+    actions as the (un-injected, seed-determined) noise source. Crucially, the ALE
+    sticky RNG draw is seeded by reset(seed=...) and is action-independent, so the
+    trajectory stays a deterministic function of (seed, action sequence) even with
+    sticky on -- which is exactly what lets the seed-replay oracle pin the sticky
+    outcome (verified by the Rung-2 gating probe before any number is trusted).
     """
 
-    def __init__(self, frameskip: int = 4):
+    def __init__(self, frameskip: int = 4, repeat_action_probability: float = 0.0):
         self.env = OCAtari(
             GAME_ID,
             mode="ram",
             hud=False,
             render_mode="rgb_array",
             frameskip=frameskip,
-            repeat_action_probability=0.0,
+            repeat_action_probability=repeat_action_probability,
         )
         self.nb_actions = self.env.nb_actions
 
