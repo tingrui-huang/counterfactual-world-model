@@ -53,6 +53,8 @@ class Encoder(nn.Module):
 
     def __init__(self, cfg: TokenizerConfig):
         super().__init__()
+        assert cfg.res % cfg.patch == 0, \
+            f"res {cfg.res} not divisible by patch {cfg.patch} (patch grid must tile)"
         self.cfg = cfg
         self.P = (cfg.res // cfg.patch) ** 2
         self.patch_embed = nn.Conv2d(1, cfg.dim, cfg.patch, stride=cfg.patch)

@@ -54,7 +54,10 @@ def root() -> Path:
 
 
 def data_dir(s: float) -> Path:
-    d = root() / f"data_s{s:g}"
+    # resolution-tagged: a dataset preprocessed at a different FrameSpec.res is a
+    # DIFFERENT dataset (different frames + oracle frame-cache). Tagging lets the
+    # 84px and 128px datasets coexist on Drive, each resume-safe, without clobbering.
+    d = root() / f"data_s{s:g}_res{FRAME.res}"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
@@ -88,8 +91,14 @@ N_SAMPLES = 250        # fixed eval tuples per s (rng(7) subsample, as Rung 2/2.
 class FrameSpec:
     crop_top: int = 34       # ALE Pong: rows [34,194) = the 160x160 play area
     crop_bottom: int = 194
-    res: int = 84            # output H = W  (84 Atari-standard; 128/160 = the escape
-                             # hatch if Stage-2 collision fails)
+    res: int = 128           # output H = W. Bumped 84->128 (decision ①, the first
+                             # suspect): at 84px the paddle's 4.59 px/step shrank to
+                             # 2.41 resized px and the M4/K64 eye localized the paddle
+                             # only to ~4 px (linear-probe gate fail); 128px gives the
+                             # eye more pixels ON the paddle. NOTE the gate is
+                             # scale-invariant (both probe MAE and the threshold scale
+                             # with res), so this is no free pass — it helps only if
+                             # more input pixels genuinely sharpen localization.
 
     @property
     def scale(self) -> float:        # exact resized-px per screen-px
@@ -113,11 +122,11 @@ def paddle_step_resized() -> float:
 # ---------------------------------------------------------------- ④ tokenizer shape
 @dataclass
 class TokenizerConfig:
-    name: str = "M4_K64_res84"
+    name: str = "M4_K64_res128"
     M: int = 4               # semantic tokens per frame        (primary knob 1)
     K: int = 64              # codebook size                    (primary knob 2)
-    res: int = 84            # must match FrameSpec.res
-    patch: int = 12          # 84/12 -> 7x7 = 49 patches
+    res: int = 128           # must match FrameSpec.res
+    patch: int = 16          # 128/16 -> 8x8 = 64 patches (84/12 didn't divide 128)
     dim: int = 128
     depth: int = 4
     heads: int = 4
