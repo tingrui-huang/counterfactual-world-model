@@ -100,7 +100,11 @@ class VectorQuantizerEMA(nn.Module):
         """sem (B,M,dim) -> (quantized (B,M,dim), indices (B,M), commit loss,
         perplexity). EMA codebook update happens here when training."""
         z = self.proj_in(sem)                                  # (B,M,cd)
-        flat = z.reshape(-1, self.cfg.code_dim)
+        # force fp32 for ALL codebook ops: the buffers are fp32, and under AMP `z`
+        # is fp16 -> the EMA matmuls and especially the dead-code index_put
+        # (self.codebook[dead] = flat[pick]) would dtype-mismatch the fp32 buffers.
+        # EMA-VQ in fp16 is numerically poor regardless, so this is the right call.
+        flat = z.reshape(-1, self.cfg.code_dim).float()
         idx = self.quantize_indices(flat)                      # (B*M,)
         e = self.codebook[idx]
         if self.training:

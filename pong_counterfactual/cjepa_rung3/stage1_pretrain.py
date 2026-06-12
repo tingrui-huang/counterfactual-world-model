@@ -99,7 +99,7 @@ def train(cfg: C.TokenizerConfig, n_train_eps: int):
         model.ema_update(m)
 
         if (step + 1) % 50 == 0 or step == start:
-            row = {"step": step + 1, "loss": float(loss), **parts, "lr": lr,
+            row = {"step": step + 1, "loss": float(loss.detach()), **parts, "lr": lr,
                    "sec": round(time.time() - t0, 1)}
             with open(log_path, "a") as f:
                 f.write(json.dumps(row) + "\n")
