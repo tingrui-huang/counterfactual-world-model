@@ -1,0 +1,107 @@
+{
+  "M4_K64_res84": {
+    "collision_allM": {
+      "recomputed": 0.07377049180327869,
+      "reported": 0.07377049180327869,
+      "agree": true
+    },
+    "n_free_tuples": {
+      "recomputed": 122,
+      "reported": 122,
+      "agree": true,
+      "note": "free = coll_flag != -1"
+    },
+    "n_samples_pool": {
+      "recomputed": 250,
+      "reported": null,
+      "agree": null
+    },
+    "probe_W_MK": {
+      "recomputed": 256,
+      "reported": 256,
+      "agree": true,
+      "note": "probe_W rows == M*K one-hot features"
+    },
+    "probe_W_n_dims": {
+      "recomputed": 4,
+      "reported": 4,
+      "agree": true,
+      "note": "4 ground-truth position dims"
+    },
+    "_unavailable": [
+      "probe_mae_resized_px (needs absent dataset)",
+      "collision_per_slot (per-slot flags not stored in npz)",
+      "n_stuck (stuck array not stored; coll_flag==-1 is a proxy)"
+    ]
+  },
+  "M8_K128_res84": {
+    "collision_allM": {
+      "recomputed": 0.4180327868852459,
+      "reported": 0.4180327868852459,
+      "agree": true
+    },
+    "n_free_tuples": {
+      "recomputed": 122,
+      "reported": 122,
+      "agree": true,
+      "note": "free = coll_flag != -1"
+    },
+    "n_samples_pool": {
+      "recomputed": 250,
+      "reported": null,
+      "agree": null
+    },
+    "probe_W_MK": {
+      "recomputed": 1024,
+      "reported": 1024,
+      "agree": true,
+      "note": "probe_W rows == M*K one-hot features"
+    },
+    "probe_W_n_dims": {
+      "recomputed": 4,
+      "reported": 4,
+      "agree": true,
+      "note": "4 ground-truth position dims"
+    },
+    "_unavailable": [
+      "probe_mae_resized_px (needs absent dataset)",
+      "collision_per_slot (per-slot flags not stored in npz)",
+      "n_stuck (stuck array not stored; coll_flag==-1 is a proxy)"
+    ]
+  },
+  "M4_K64_res128": {
+    "collision_allM": {
+      "recomputed": 0.9918032786885246,
+      "reported": 0.9918032786885246,
+      "agree": true
+    },
+    "n_free_tuples": {
+      "recomputed": 122,
+      "reported": 122,
+      "agree": true,
+      "note": "free = coll_flag != -1"
+    },
+    "n_samples_pool": {
+      "recomputed": 250,
+      "reported": null,
+      "agree": null
+    },
+    "probe_W_MK": {
+      "recomputed": 256,
+      "reported": 256,
+      "agree": true,
+      "note": "probe_W rows == M*K one-hot features"
+    },
+    "probe_W_n_dims": {
+      "recomputed": 4,
+      "reported": 4,
+      "agree": true,
+      "note": "4 ground-truth position dims"
+    },
+    "_unavailable": [
+      "probe_mae_resized_px (needs absent dataset)",
+      "collision_per_slot (per-slot flags not stored in npz)",
+      "n_stuck (stuck array not stored; coll_flag==-1 is a proxy)"
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "M4_K64_res84": {
+    "run_id": "M4_K64_res84",
+    "M": {
+      "value": 4,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 4,
+      "tensor_shape": 4,
+      "gate_report": 4,
+      "name_hint": 4,
+      "conflict": false
+    },
+    "K": {
+      "value": 64,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 64,
+      "tensor_shape": 64,
+      "gate_report": 64,
+      "name_hint": 64,
+      "conflict": false
+    },
+    "res": {
+      "value": 84,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 84,
+      "tensor_shape": 84,
+      "gate_report": 84,
+      "name_hint": 84,
+      "conflict": false
+    },
+    "patch": {
+      "value": 12,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 12,
+      "tensor_shape": 12,
+      "gate_report": 12,
+      "name_hint": null,
+      "conflict": false
+    },
+    "P_positional": {
+      "value": 49,
+      "expected_from_res_patch": 49,
+      "agree": true
+    },
+    "dim": {
+      "value": 128,
+      "source": "EXPLICIT_METADATA"
+    },
+    "seed": {
+      "value": 0,
+      "source": "EXPLICIT_METADATA"
+    },
+    "steps": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA"
+    },
+    "final_ckpt_step": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA (latest ckpt 'step'); final.pt itself stores no step \u2014 INFERRED equal to latest by tensor identity"
+    },
+    "dataset_identity": {
+      "value": "data_s0.5_res84/ep_*.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "oracle_identity": {
+      "value": "data_s0.5_res84/oracle_cache.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "repo_commit_recorded": {
+      "value": null,
+      "source": "UNKNOWN",
+      "note": "checkpoints do not embed a git commit"
+    }
+  },
+  "M8_K128_res84": {
+    "run_id": "M8_K128_res84",
+    "M": {
+      "value": 8,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 8,
+      "tensor_shape": 8,
+      "gate_report": 8,
+      "name_hint": 8,
+      "conflict": false
+    },
+    "K": {
+      "value": 128,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 128,
+      "tensor_shape": 128,
+      "gate_report": 128,
+      "name_hint": 128,
+      "conflict": false
+    },
+    "res": {
+      "value": 84,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 84,
+      "tensor_shape": 84,
+      "gate_report": 84,
+      "name_hint": 84,
+      "conflict": false
+    },
+    "patch": {
+      "value": 12,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 12,
+      "tensor_shape": 12,
+      "gate_report": 12,
+      "name_hint": null,
+      "conflict": false
+    },
+    "P_positional": {
+      "value": 49,
+      "expected_from_res_patch": 49,
+      "agree": true
+    },
+    "dim": {
+      "value": 128,
+      "source": "EXPLICIT_METADATA"
+    },
+    "seed": {
+      "value": 0,
+      "source": "EXPLICIT_METADATA"
+    },
+    "steps": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA"
+    },
+    "final_ckpt_step": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA (latest ckpt 'step'); final.pt itself stores no step \u2014 INFERRED equal to latest by tensor identity"
+    },
+    "dataset_identity": {
+      "value": "data_s0.5_res84/ep_*.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "oracle_identity": {
+      "value": "data_s0.5_res84/oracle_cache.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "repo_commit_recorded": {
+      "value": null,
+      "source": "UNKNOWN",
+      "note": "checkpoints do not embed a git commit"
+    }
+  },
+  "M4_K64_res128": {
+    "run_id": "M4_K64_res128",
+    "M": {
+      "value": 4,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 4,
+      "tensor_shape": 4,
+      "gate_report": 4,
+      "name_hint": 4,
+      "conflict": false
+    },
+    "K": {
+      "value": 64,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 64,
+      "tensor_shape": 64,
+      "gate_report": 64,
+      "name_hint": 64,
+      "conflict": false
+    },
+    "res": {
+      "value": 128,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 128,
+      "tensor_shape": 128,
+      "gate_report": 128,
+      "name_hint": 128,
+      "conflict": false
+    },
+    "patch": {
+      "value": 16,
+      "source": "EXPLICIT_METADATA",
+      "explicit": 16,
+      "tensor_shape": 16,
+      "gate_report": 16,
+      "name_hint": null,
+      "conflict": false
+    },
+    "P_positional": {
+      "value": 64,
+      "expected_from_res_patch": 64,
+      "agree": true
+    },
+    "dim": {
+      "value": 128,
+      "source": "EXPLICIT_METADATA"
+    },
+    "seed": {
+      "value": 0,
+      "source": "EXPLICIT_METADATA"
+    },
+    "steps": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA"
+    },
+    "final_ckpt_step": {
+      "value": 30000,
+      "source": "EXPLICIT_METADATA (latest ckpt 'step'); final.pt itself stores no step \u2014 INFERRED equal to latest by tensor identity"
+    },
+    "dataset_identity": {
+      "value": "data_s0.5_res128/ep_*.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "oracle_identity": {
+      "value": "data_s0.5_res128/oracle_cache.npz (config scheme)",
+      "source": "INFERRED_FROM_CONFIG",
+      "present_in_audit_scope": false
+    },
+    "repo_commit_recorded": {
+      "value": null,
+      "source": "UNKNOWN",
+      "note": "checkpoints do not embed a git commit"
+    }
+  }
+}

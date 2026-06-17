@@ -1,0 +1,9 @@
+target,oracle_feature,metric,value,value_mean
+stuck(binary),intended_action_only,ROC-AUC,"0.482 [0.408,0.538]",0.4823920645028307
+stuck(binary),player_disp_signed,ROC-AUC,"0.480 [0.364,0.569]",0.48016575255326793
+stuck(binary),player_disp_abs,ROC-AUC,"0.659 [0.593,0.723]",0.6592259076650538
+stuck(binary),"full_4vec_transition[vk,vk1]",ROC-AUC,"0.473 [0.393,0.555]",0.47260365635654306
+stuck(binary),delta_4vec[vk1-vk],ROC-AUC,"0.459 [0.408,0.532]",0.45928428024027773
+stuck(binary),pixel_diff_8x8,ROC-AUC,"0.568 [0.480,0.671]",0.5675882432538657
+realized_direction(3cls),full_4vec_transition,acc(base 0.40),"0.712 [0.610,0.816] base 0.401",0.7124898870353096
+realized_displacement,full_4vec_transition,R2,"0.786 [0.736,0.823]",0.7860484341242445

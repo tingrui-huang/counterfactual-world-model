@@ -1,0 +1,5 @@
+definition,n_identifiable,n_total,note
+OLD: a_prev != a_intended,250,250,VACUOUS here — a_prev is always NOOP so this is ALL tuples; does not isolate where the noise is observable
+ORACLE: noise realization changes physical outcome,122,250,= FREE tuples (intended action has a distinct effect); equals stuck==0
+replay-UNREACHABLE counterfactual (stuck tuples),128,250,at a stuck step the free branch cannot be produced by seed replay (o_fac==o_cf==other); the binary stuck label is NOT counterfactually observable from one transition for these
+OVERLAP old AND oracle,122,250,oracle subset is a strict subset of the (vacuous) old

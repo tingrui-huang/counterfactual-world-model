@@ -1,0 +1,1 @@
+python -m pong_counterfactual.cjepa_rung3.validate_sticky_probe

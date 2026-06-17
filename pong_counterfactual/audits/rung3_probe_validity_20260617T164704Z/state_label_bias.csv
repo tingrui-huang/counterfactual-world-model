@@ -1,0 +1,8 @@
+signal,mean_free,mean_stuck,ks_stat,ks_p,single_feat_grouped_auc,note
+source_ball_x,86.26229508196721,81.734375,0.1486936475409836,0.11027109679834014,0.5461785109591689,
+source_ball_y,116.09016393442623,116.1875,0.08311987704918032,0.7374090708321799,0.463815400159003,
+source_player_y,118.17622950819673,117.453125,0.1169313524590164,0.32551187030725953,0.4618448680452092,
+source_enemy_y,121.89344262295081,121.9609375,0.07159323770491803,0.8734446919482548,0.4612870756395594,
+per_episode_stuck_rate,0.35294117647058826,0.631578947368421,,,,"range across 14 episodes [0.35,0.63] — spread => z_t-encodes-episode could leak"
+duplicate_source_states,249,250,,,,249 unique of 250 source 4-vecs; episode-grouped splits keep whole episodes on one side (no t/t+1 leakage)
+z_t_only_sticky_AUC_permutation_test,0.5513772101791661,0.5004392357764054,,,,"observed grouped AUC=0.551, null mean=0.500, p=0.154 -> NOT significant (apparent z_t signal is finite-sample/overfit)"

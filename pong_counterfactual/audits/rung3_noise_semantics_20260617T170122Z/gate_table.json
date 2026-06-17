@@ -1,0 +1,26 @@
+[
+  {
+    "Gate": "N1",
+    "Check": "ALE sticky/frame-skip mechanics + 3.2px puzzle",
+    "PASS criterion": "mechanics explained from code + data; binary stuck shown lossy",
+    "Result": "RESOLVED",
+    "Evidence artifact": "NOISE_SEMANTICS_REPORT.md (sec 1), realized_motion_results.csv",
+    "Notes": "frameskip=2, sticky applied inside per-frame ale.act() loop (ale_py env.py:304); repeated action = last EXECUTED frame-action (not the logged intended NOOP). Empirical stuck rate 0.51~=s=0.5 (not s^2), and stuck moves partial (3.2px) vs free full (4.6px) -> binary stuck collapses a partial, continuous motion-suppression process."
+  },
+  {
+    "Gate": "N2",
+    "Check": "re-posed targets (displacement/direction/magnitude/residual) x features",
+    "PASS criterion": "JEPA decodes realized motion clearly above action-only and near oracle",
+    "Result": "WEAK",
+    "Evidence artifact": "realized_motion_results.csv",
+    "Notes": "direction: oracle=0.695 action_only=0.639 JEPA=0.576 (base 0.402); displacement R2: oracle=0.783 JEPA=-0.416. JEPA adds little over actions and trails oracle."
+  },
+  {
+    "Gate": "N3",
+    "Check": "representation structure: token locality / transition stability",
+    "PASS criterion": "paddle-only token change grades with \u0394paddle; small moves don't flip all tokens",
+    "Result": "FAIL (global/entangled tokens)",
+    "Evidence artifact": "token_locality_metrics.csv, hamming_vs_displacement.png, per_slot_flip_rates.png",
+    "Notes": "PURE-paddle corr(Hamming,\u0394paddle)=0.387; a paddle-only change flips 3.55/4 tokens spread across ALL slots (per-slot ~0.47, no paddle-local slot); 0.708 of small paddle moves flip ALL tokens; adjacent-frame persistence 0.26 (ball-driven churn). No stable local per-slot transition structure."
+  }
+]

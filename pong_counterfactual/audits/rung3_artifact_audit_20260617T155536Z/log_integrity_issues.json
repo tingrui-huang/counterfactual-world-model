@@ -1,0 +1,8 @@
+{
+  "M4_K64_res84": [
+    "1 documented resume restart(s) [(200, 1)] \u2014 a runtime disconnected before its first checkpoint (ckpt_every=500); the append-only log kept the orphaned prefix and training restarted from a checkpoint boundary and reached step 30000. Documented Colab resume contract; NON-BLOCKING",
+    "duplicate steps [1, 50, 100, 150, 200] \u2014 same documented-resume cause (re-logged orphan prefix); NON-BLOCKING"
+  ],
+  "M8_K128_res84": [],
+  "M4_K64_res128": []
+}

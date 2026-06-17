@@ -1,0 +1,65 @@
+[
+  {
+    "Gate": "A0",
+    "Check": "repo root + discover 3 runs + output-separation guard",
+    "PASS criterion": "exactly one dir per expected run; output outside frozen runs",
+    "Result": "PASS",
+    "Evidence artifact": "repository_info.json, discovered_runs.json, git_status_before.txt",
+    "Blocking consequence": "stop checkpoint-dependent gates for any run not uniquely identified",
+    "Notes": "all 3 runs uniquely found"
+  },
+  {
+    "Gate": "A1",
+    "Check": "recursive file inventory, sizes, mtimes, SHA-256",
+    "PASS criterion": "required files exist non-empty; no zero-byte/truncated; hashes computed",
+    "Result": "PASS",
+    "Evidence artifact": "inventory.csv, hashes.sha256, per_run_inventory.json",
+    "Blocking consequence": "missing required file blocks that run's content gates",
+    "Notes": "21 files hashed across 3 runs"
+  },
+  {
+    "Gate": "A2",
+    "Check": "load final.pt + latest ckpt; components, shapes, final-vs-latest",
+    "PASS criterion": "final.pt loads; required components present; one coherent architecture; final.pt traceable to a checkpoint state",
+    "Result": "PASS",
+    "Evidence artifact": "checkpoint_summary.json, checkpoint_tensor_inventory.csv, final_vs_latest_checkpoint.json",
+    "Blocking consequence": "skip artifact-to-checkpoint consistency for a failed checkpoint",
+    "Notes": "all checkpoints load & strict-match architecture"
+  },
+  {
+    "Gate": "A3",
+    "Check": "normalize M/K/res/patch across metadata/shape/gate/name; cross-check",
+    "PASS criterion": "no contradiction among strong sources; name agrees or marked unverified; res<->positional structure agrees; M/K agree with tensors",
+    "Result": "PASS",
+    "Evidence artifact": "normalized_run_manifests.json, configuration_consistency.csv, configuration_conflicts.json",
+    "Blocking consequence": "config conflict invalidates that run's identity",
+    "Notes": "all strong sources agree per run"
+  },
+  {
+    "Gate": "A4",
+    "Check": "parse gate report + npz; recompute deterministic metrics; cross-check",
+    "PASS criterion": "report & npz parse; no NaN/Inf; sample counts consistent; recomputed metrics agree within tolerance; report references correct run",
+    "Result": "PASS",
+    "Evidence artifact": "gate_report_parsed.json, gate_artifact_summary.json, gate_metric_recomputation.json, gate_report_vs_artifacts.csv",
+    "Blocking consequence": "report/artifact disagreement blocks trusting gate numbers",
+    "Notes": "report<->npz consistent; collision recomputed exactly"
+  },
+  {
+    "Gate": "A5",
+    "Check": "parse train_log.jsonl; monotonicity, NaN/Inf, truncation, freshness",
+    "PASS criterion": "JSONL parseable; steps non-decreasing; no NaN/Inf; reached expected final; plausible temporal ordering",
+    "Result": "PASS WITH WARNINGS",
+    "Evidence artifact": "train_log_summary.json, train_log_rows.csv, freshness_timeline.csv, log_integrity_issues.json",
+    "Blocking consequence": "malformed/NaN/undocumented-jump log blocks trusting training provenance",
+    "Notes": "all logs reach step 30000, no NaN/Inf; WARNING: documented Colab resume restart(s) in M4_K64_res84 (append-only log kept an orphan pre-first-checkpoint prefix)"
+  },
+  {
+    "Gate": "A6",
+    "Check": "single normalized comparison table across all three runs",
+    "PASS criterion": "all three runs have comparable normalized records; config/dataset differences visible",
+    "Result": "PASS",
+    "Evidence artifact": "cross_run_comparison.csv, cross_run_comparison.md",
+    "Blocking consequence": "incomparable runs make cross-run reading misleading",
+    "Notes": "descriptive only \u2014 NOT a scientific 'which is better'; res128 uses a different (res-tagged) dataset than the two res84 runs."
+  }
+]

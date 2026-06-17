@@ -1,0 +1,19 @@
+{
+  "runs": {
+    "M4_K64_res84": [
+      "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84"
+    ],
+    "M8_K128_res84": [
+      "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84"
+    ],
+    "M4_K64_res128": [
+      "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128"
+    ]
+  },
+  "unclassified": [],
+  "all_final_pts": [
+    "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\final.pt",
+    "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\final.pt",
+    "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\final.pt"
+  ]
+}

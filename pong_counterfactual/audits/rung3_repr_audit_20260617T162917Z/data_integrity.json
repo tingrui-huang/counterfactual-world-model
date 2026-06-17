@@ -1,0 +1,22 @@
+{
+  "length_consistent": true,
+  "lengths": {
+    "pool": 250,
+    "o_cf": 250,
+    "o_fac": 250,
+    "other": 250,
+    "o_cf_frame": 250,
+    "o_fac_frame": 250,
+    "other_frame": 250,
+    "stuck": 250
+  },
+  "pool_matches": true,
+  "replay_vec_match_rate": 1.0,
+  "replay_frame_match_rate": 1.0,
+  "nan_rows_per_branch": {
+    "o_cf": 0,
+    "o_fac": 0,
+    "other": 0
+  },
+  "issues": []
+}

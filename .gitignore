@@ -37,3 +37,7 @@ pong_counterfactual/**/data/
 pong_counterfactual/**/runs/
 *.npz
 *.pkl
+
+# Frozen Drive-exported run/data dirs copied in for read-only audits (large .pt/.npz,
+# not source — the audit scripts read them on demand and never modify them)
+pong_counterfactual/results/

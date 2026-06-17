@@ -1,0 +1,13 @@
+{
+  "n_tuples": 250,
+  "n_stuck": 128,
+  "n_free": 122,
+  "n_illposed_stuck": 0,
+  "n_identifiable": 250,
+  "n_identifiable_and_stuck": 128,
+  "n_identifiable_and_free": 122,
+  "n_valid_fac_cf": 250,
+  "n_branches_physically_differ_fac_cf": 122,
+  "n_branches_pixel_differ_fac_cf": 122,
+  "frac_branches_differ_fac_cf": 0.488
+}

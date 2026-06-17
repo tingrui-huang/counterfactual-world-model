@@ -1,0 +1,32 @@
+{
+  "deterministic_encoding": true,
+  "n_pairs": 250,
+  "n_physically_differ": 122,
+  "n_physically_identical": 128,
+  "collision_among_differing_fac_cf": 0.0,
+  "mean_hamming_among_differing_fac_cf": 3.8360655737704916,
+  "collision_among_identical_fac_cf": 1.0,
+  "collision_allpairs_fac_cf": 0.512,
+  "collision_per_slot_fac_cf_differing": [
+    0.040983606557377046,
+    0.040983606557377046,
+    0.040983606557377046,
+    0.040983606557377046
+  ],
+  "collision_allM_fac_other": 0.548,
+  "collision_per_slot_fac_other": [
+    0.616,
+    0.572,
+    0.6,
+    0.616
+  ],
+  "mean_token_hamming_fac_cf_allpairs": 1.872,
+  "mean_token_hamming_fac_other": 1.596,
+  "mean_prequant_latent_dist_differing_fac_cf": 10.033361434936523,
+  "crosscheck_vs_gate_coll_flag": {
+    "available": true,
+    "pool_match": true,
+    "n_free": 122,
+    "matches_saved_coll_flag": true
+  }
+}

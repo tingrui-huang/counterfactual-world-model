@@ -1,0 +1,9 @@
+# Cross-run comparison (descriptive only)
+
+> This table is descriptive. It does NOT conclude which architecture is scientifically better. All three gates FAILED their own pass criteria; that is a Stage-B question, not part of this artifact audit.
+
+| run | M | K | res | patch | final_ckpt_step | checkpoint_bytes | codes_used_of_K | last_loss | last_perplexity | collision_allM | player_y_probe_mae | paddle_step_px | gate_PASSED | dataset_identity | oracle_identity | config_conflicts | audit_verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| M4_K64_res84 | 4 | 64 | 84 | 12 | 30000 | 10046467 | 64 | 0.6299130916595459 | 47.153438568115234 | 0.07377049180327869 | 4.0459896717770985 | 2.4076500000000003 | False | data_s0.5_res84/ep_*.npz (config scheme) | data_s0.5_res84/oracle_cache.npz (config scheme) | False | OK |
+| M8_K128_res84 | 8 | 128 | 84 | 12 | 30000 | 10067715 | 127 | 0.650193452835083 | 68.63330841064453 | 0.4180327868852459 | 4.269795537903122 | 2.4076500000000003 | False | data_s0.5_res84/ep_*.npz (config scheme) | data_s0.5_res84/oracle_cache.npz (config scheme) | False | OK |
+| M4_K64_res128 | 4 | 64 | 128 | 16 | 30000 | 10199555 | 62 | 0.21717631816864014 | 43.409423828125 | 0.9918032786885246 | 16.535092591679195 | 3.6688000000000005 | False | data_s0.5_res128/ep_*.npz (config scheme) | data_s0.5_res128/oracle_cache.npz (config scheme) | False | OK |

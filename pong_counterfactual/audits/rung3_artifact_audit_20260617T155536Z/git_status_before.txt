@@ -1,0 +1,5 @@
+?? _frozen_hash_check.py
+?? pong_counterfactual/audits/
+?? pong_counterfactual/cjepa_rung3/audit_rung3_tokenizer_artifacts.py
+?? pong_counterfactual/cjepa_rung3/test_audit_rung3_artifacts.py
+?? pong_counterfactual/results/

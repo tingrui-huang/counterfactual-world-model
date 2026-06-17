@@ -1,0 +1,1 @@
+python -m pong_counterfactual.cjepa_rung3.diagnose_representation --data-dir D:\Users\trhua\Research\counterfactual-world-model\pong_counterfactual\results\data_s0.5-20260617T160801Z-3-001\data_s0.5 --checkpoint D:\Users\trhua\Research\counterfactual-world-model\pong_counterfactual\results\tokenizer_M4_K64_res84-20260617T152639Z-3-001\tokenizer_M4_K64_res84\final.pt

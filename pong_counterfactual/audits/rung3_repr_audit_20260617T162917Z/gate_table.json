@@ -1,0 +1,29 @@
+[
+  {
+    "Gate": "R1",
+    "Check": "data/oracle validity + branch physical difference",
+    "PASS criterion": "consistent lengths, 100% replay determinism, branches physically differ",
+    "Result": "PASS",
+    "Evidence artifact": "sample_counts.json, data_integrity.json, branch_physical_distance.csv, branch_distance_histogram.png",
+    "Blocking consequence": "if FAIL, R2/R3 are blocked (no trustworthy branches)",
+    "Notes": "122/250 branches differ physically"
+  },
+  {
+    "Gate": "R2",
+    "Check": "frozen encoding: determinism, collision, Hamming, latent dist",
+    "PASS criterion": "deterministic; physically-different branches stay token-distinct",
+    "Result": "PASS",
+    "Evidence artifact": "representation_metrics.json, pair_metrics.csv, token_hamming_histogram.png, physical_vs_latent_distance.png, collision_by_physical_difference.png, pair_gallery.png",
+    "Blocking consequence": "if FAIL, abductability (R3) cannot rest on these tokens",
+    "Notes": "on 122 physically-DIFFERENT pairs: collision 0.0%, mean Hamming 3.84/4 (identical/stuck pairs collide 100%, as expected \u2014 same frame)"
+  },
+  {
+    "Gate": "R3",
+    "Check": "frozen-latent probes: does z_{t+1} add realized-noise info?",
+    "PASS criterion": "z_t+z_{t+1}+actions beats action-only on sticky/executed-action decode; shuffled control near chance",
+    "Result": "PASS WITH WARNINGS",
+    "Evidence artifact": "probe_results.csv, sticky_probe_roc.png, sticky_probe_confusion_matrix.png, executed_action_confusion_matrix.png, probe_summary.png",
+    "Blocking consequence": "drives the final abductability verdict",
+    "Notes": "sticky[identifiable]: action-only 0.51 -> z_t+act 0.62 -> z_t+z_t1+act 0.57  (\u0394_nextlatent=-0.05, \u0394_vs_action=+0.06); executed_action[all]: action-only 0.51 -> z_t+act 0.62 -> z_t+z_t1+act 0.58  (\u0394_nextlatent=-0.04, \u0394_vs_action=+0.08) | next latent adds little/no info over z_t+actions and CIs touch chance \u2014 weak/uncertain signal | shuffled control near chance"
+  }
+]

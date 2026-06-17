@@ -1,0 +1,722 @@
+{
+  "M4_K64_res84": {
+    "final": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\final.pt",
+      "kind": "final",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "model"
+      ],
+      "has_optimizer": false,
+      "has_scheduler": false,
+      "has_scaler": false,
+      "has_rng": false,
+      "has_gen": false,
+      "explicit_step": null,
+      "embedded_config": {
+        "name": "M4_K64_res84",
+        "M": 4,
+        "K": 64,
+        "res": 84,
+        "patch": 12,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 4,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 12,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 49,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 84,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            4,
+            128
+          ],
+          "pos": [
+            1,
+            49,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            12,
+            12
+          ],
+          "codebook": [
+            64,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    },
+    "latest_ckpt": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\ckpts\\ckpt_step00030000.pt",
+      "kind": "latest_ckpt",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "gen",
+        "model",
+        "opt",
+        "rng",
+        "samp",
+        "scaler",
+        "step"
+      ],
+      "has_optimizer": true,
+      "has_scheduler": false,
+      "has_scaler": true,
+      "has_rng": true,
+      "has_gen": true,
+      "explicit_step": 30000,
+      "embedded_config": {
+        "name": "M4_K64_res84",
+        "M": 4,
+        "K": 64,
+        "res": 84,
+        "patch": 12,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 4,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 12,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 49,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 84,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            4,
+            128
+          ],
+          "pos": [
+            1,
+            49,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            12,
+            12
+          ],
+          "codebook": [
+            64,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    }
+  },
+  "M8_K128_res84": {
+    "final": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\final.pt",
+      "kind": "final",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "model"
+      ],
+      "has_optimizer": false,
+      "has_scheduler": false,
+      "has_scaler": false,
+      "has_rng": false,
+      "has_gen": false,
+      "explicit_step": null,
+      "embedded_config": {
+        "name": "M8_K128_res84",
+        "M": 8,
+        "K": 128,
+        "res": 84,
+        "patch": 12,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 8,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 12,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 49,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 84,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            8,
+            128
+          ],
+          "pos": [
+            1,
+            49,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            12,
+            12
+          ],
+          "codebook": [
+            128,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    },
+    "latest_ckpt": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\ckpts\\ckpt_step00030000.pt",
+      "kind": "latest_ckpt",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "gen",
+        "model",
+        "opt",
+        "rng",
+        "samp",
+        "scaler",
+        "step"
+      ],
+      "has_optimizer": true,
+      "has_scheduler": false,
+      "has_scaler": true,
+      "has_rng": true,
+      "has_gen": true,
+      "explicit_step": 30000,
+      "embedded_config": {
+        "name": "M8_K128_res84",
+        "M": 8,
+        "K": 128,
+        "res": 84,
+        "patch": 12,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 8,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 12,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 49,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 84,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            8,
+            128
+          ],
+          "pos": [
+            1,
+            49,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            12,
+            12
+          ],
+          "codebook": [
+            128,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    }
+  },
+  "M4_K64_res128": {
+    "final": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\final.pt",
+      "kind": "final",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "model"
+      ],
+      "has_optimizer": false,
+      "has_scheduler": false,
+      "has_scaler": false,
+      "has_rng": false,
+      "has_gen": false,
+      "explicit_step": null,
+      "embedded_config": {
+        "name": "M4_K64_res128",
+        "M": 4,
+        "K": 64,
+        "res": 128,
+        "patch": 16,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 4,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 16,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            4,
+            128
+          ],
+          "pos": [
+            1,
+            64,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            16,
+            16
+          ],
+          "codebook": [
+            64,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    },
+    "latest_ckpt": {
+      "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\ckpts\\ckpt_step00030000.pt",
+      "kind": "latest_ckpt",
+      "loadable": true,
+      "top_level_type": "dict",
+      "top_level_keys": [
+        "config",
+        "gen",
+        "model",
+        "opt",
+        "rng",
+        "samp",
+        "scaler",
+        "step"
+      ],
+      "has_optimizer": true,
+      "has_scheduler": false,
+      "has_scaler": true,
+      "has_rng": true,
+      "has_gen": true,
+      "explicit_step": 30000,
+      "embedded_config": {
+        "name": "M4_K64_res128",
+        "M": 4,
+        "K": 64,
+        "res": 128,
+        "patch": 16,
+        "dim": 128,
+        "depth": 4,
+        "heads": 4,
+        "pred_depth": 2,
+        "code_dim": 32,
+        "vis_lo": 0.5,
+        "vis_hi": 1.0,
+        "w_s2p": 1.0,
+        "w_p2p": 1.0,
+        "beta_commit": 0.25,
+        "vq_decay": 0.99,
+        "dead_code_steps": 200,
+        "steps": 30000,
+        "batch": 256,
+        "lr": 0.00015,
+        "weight_decay": 0.04,
+        "warmup": 1000,
+        "ema_lo": 0.996,
+        "ema_hi": 1.0,
+        "ckpt_every": 500,
+        "keep_ckpts": 3,
+        "seed": 0
+      },
+      "model_present": true,
+      "n_tensors": 178,
+      "component_presence": {
+        "context.": true,
+        "target.": true,
+        "vq.codebook": true,
+        "pred_s2p.": true,
+        "pred_p2p.": true
+      },
+      "codebook_present": true,
+      "sem_token_present": true,
+      "target_encoder_present": true,
+      "predictor_present": true,
+      "inferred": {
+        "M": {
+          "value": 4,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "dim": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "K": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "code_dim": {
+          "value": 32,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "patch": {
+          "value": 16,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "P": {
+          "value": 64,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "res": {
+          "value": 128,
+          "source": "INFERRED_FROM_TENSOR_SHAPE"
+        },
+        "_raw_shapes": {
+          "sem": [
+            1,
+            4,
+            128
+          ],
+          "pos": [
+            1,
+            64,
+            128
+          ],
+          "patch": [
+            128,
+            1,
+            16,
+            16
+          ],
+          "codebook": [
+            64,
+            32
+          ]
+        }
+      },
+      "strict_load": {
+        "attempted": true,
+        "ok": true,
+        "missing_keys": [],
+        "unexpected_keys": []
+      }
+    }
+  }
+}
