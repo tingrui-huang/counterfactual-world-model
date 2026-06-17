@@ -1,0 +1,5 @@
+encoding,feature_dim_per_frame,preprocessing,valid_continuous,sticky_auc_zt+act,sticky_auc_zt+zt1+act,auc_zt+act_mean,auc_zt+zt1+act_mean
+raw_ids,4,ordinal token IDs (INVALID as continuous features),False,"0.509 [0.435,0.568]","0.524 [0.427,0.604]",0.5089666791613737,0.5237122782140148
+onehot,256,slot-blocked one-hot (what A1 R3 used); binary,True,"0.550 [0.438,0.651]","0.579 [0.470,0.674]",0.549648254084939,0.5793417075562703
+codebook_emb,128,quantized code vectors; standardized,True,"0.556 [0.432,0.672]","0.568 [0.466,0.684]",0.5557731513983954,0.5678270476351431
+prequant,128,continuous proj_in(sem) BEFORE quantization; standardized,True,"0.503 [0.412,0.577]","0.571 [0.479,0.668]",0.5034722685699429,0.571214783761331

@@ -1,0 +1,16 @@
+run,metric,recomputed,reported,agree,note
+M4_K64_res84,collision_allM,0.07377049180327869,0.07377049180327869,True,
+M4_K64_res84,n_free_tuples,122,122,True,free = coll_flag != -1
+M4_K64_res84,n_samples_pool,250,,,
+M4_K64_res84,probe_W_MK,256,256,True,probe_W rows == M*K one-hot features
+M4_K64_res84,probe_W_n_dims,4,4,True,4 ground-truth position dims
+M8_K128_res84,collision_allM,0.4180327868852459,0.4180327868852459,True,
+M8_K128_res84,n_free_tuples,122,122,True,free = coll_flag != -1
+M8_K128_res84,n_samples_pool,250,,,
+M8_K128_res84,probe_W_MK,1024,1024,True,probe_W rows == M*K one-hot features
+M8_K128_res84,probe_W_n_dims,4,4,True,4 ground-truth position dims
+M4_K64_res128,collision_allM,0.9918032786885246,0.9918032786885246,True,
+M4_K64_res128,n_free_tuples,122,122,True,free = coll_flag != -1
+M4_K64_res128,n_samples_pool,250,,,
+M4_K64_res128,probe_W_MK,256,256,True,probe_W rows == M*K one-hot features
+M4_K64_res128,probe_W_n_dims,4,4,True,4 ground-truth position dims

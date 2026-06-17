@@ -1,0 +1,45 @@
+{
+  "summary": "The latent exogenous noise is the per-internal-frame ALE sticky-action draw sequence. The only well-posed OBSERVABLE noise effect in the logged data is the realized paddle displacement; the binary `stuck` bit is a lossy 2-probe summary of it.",
+  "mechanics": {
+    "frameskip": 2,
+    "repeat_action_probability_s": 0.5,
+    "sticky_unit": "per internal emulator frame (ale.act called frameskip times; sticky drawn inside each act) \u2014 see ale_py/env.py step() loop",
+    "repeated_action": "the last action ALE EXECUTED (lastAction), updated every frame \u2014 NOT the agent's logged intended action",
+    "empirical_stuck_rate": 0.512,
+    "note_on_rate": "stuck rate ~= s (not s^2); the two-probe detector flags a step as stuck when the intended action is fully overridden. The exact per-frame draw count is internal to ALE."
+  },
+  "candidate_noise_variables": [
+    {
+      "name": "binary_stuck",
+      "status": "LOGGED (oracle 2-probe detector)",
+      "verdict": "INSUFFICIENT \u2014 collapses partial/continuous motion suppression; weakly identifiable even from ground truth (A1.1)"
+    },
+    {
+      "name": "per_frame_repeated_action_pattern_or_count",
+      "status": "NOT LOGGED",
+      "verdict": "CANNOT RECONSTRUCT from agent-step data (per-frame executed actions were never recorded)"
+    },
+    {
+      "name": "realized_action_sequence",
+      "status": "NOT LOGGED",
+      "verdict": "CANNOT RECONSTRUCT"
+    },
+    {
+      "name": "realized_paddle_displacement_dy",
+      "status": "RECONSTRUCTABLE (player_y[k+1]-player_y[k] from logged vecs)",
+      "verdict": "WELL-DEFINED observable noise effect \u2014 the recommended target"
+    },
+    {
+      "name": "displacement_residual_vs_free",
+      "status": "PARTIALLY RECONSTRUCTABLE",
+      "verdict": "free branch is replay-reachable only for free tuples; for stuck tuples the free outcome is unreachable (A1.1) and must be ESTIMATED as the intended full move (~4.0px signed)"
+    }
+  ],
+  "recommended_targets": [
+    "paddle_displacement_dy(regression)",
+    "movement_direction(3class)",
+    "movement_magnitude(|dy|)",
+    "displacement_residual_vs_free(estimated)"
+  ],
+  "estimated_full_paddle_step_px": 4.0
+}

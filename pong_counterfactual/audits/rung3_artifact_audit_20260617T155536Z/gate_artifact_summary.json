@@ -1,0 +1,167 @@
+{
+  "M4_K64_res84": {
+    "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\gate_artifacts.npz",
+    "arrays": {
+      "pool": {
+        "dtype": "int64",
+        "shape": [
+          250,
+          2
+        ],
+        "size": 500,
+        "min": 0.0,
+        "max": 249.0,
+        "mean": 73.586,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "coll_flag": {
+        "dtype": "int64",
+        "shape": [
+          250
+        ],
+        "size": 250,
+        "min": -1.0,
+        "max": 1.0,
+        "mean": -0.476,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_W": {
+        "dtype": "float32",
+        "shape": [
+          256,
+          4
+        ],
+        "size": 1024,
+        "min": -45.93906021118164,
+        "max": 40.93595504760742,
+        "mean": 0.00011093519060523249,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_b": {
+        "dtype": "float32",
+        "shape": [
+          4
+        ],
+        "size": 4,
+        "min": 44.30103302001953,
+        "max": 47.409393310546875,
+        "mean": 45.50466728210449,
+        "n_nan": 0,
+        "n_inf": 0
+      }
+    }
+  },
+  "M8_K128_res84": {
+    "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\gate_artifacts.npz",
+    "arrays": {
+      "pool": {
+        "dtype": "int64",
+        "shape": [
+          250,
+          2
+        ],
+        "size": 500,
+        "min": 0.0,
+        "max": 249.0,
+        "mean": 73.586,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "coll_flag": {
+        "dtype": "int64",
+        "shape": [
+          250
+        ],
+        "size": 250,
+        "min": -1.0,
+        "max": 1.0,
+        "mean": -0.308,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_W": {
+        "dtype": "float32",
+        "shape": [
+          1024,
+          4
+        ],
+        "size": 4096,
+        "min": -14.87053108215332,
+        "max": 15.44543743133545,
+        "mean": -4.167239580965543e-05,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_b": {
+        "dtype": "float32",
+        "shape": [
+          4
+        ],
+        "size": 4,
+        "min": 43.00539016723633,
+        "max": 48.248077392578125,
+        "mean": 45.54862880706787,
+        "n_nan": 0,
+        "n_inf": 0
+      }
+    }
+  },
+  "M4_K64_res128": {
+    "path": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\gate_artifacts.npz",
+    "arrays": {
+      "pool": {
+        "dtype": "int64",
+        "shape": [
+          250,
+          2
+        ],
+        "size": 500,
+        "min": 0.0,
+        "max": 249.0,
+        "mean": 73.586,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "coll_flag": {
+        "dtype": "int64",
+        "shape": [
+          250
+        ],
+        "size": 250,
+        "min": -1.0,
+        "max": 1.0,
+        "mean": -0.028,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_W": {
+        "dtype": "float32",
+        "shape": [
+          256,
+          4
+        ],
+        "size": 1024,
+        "min": -18.815654754638672,
+        "max": 22.498119354248047,
+        "mean": 0.000735789807549736,
+        "n_nan": 0,
+        "n_inf": 0
+      },
+      "probe_b": {
+        "dtype": "float32",
+        "shape": [
+          4
+        ],
+        "size": 4,
+        "min": 65.48143005371094,
+        "max": 70.96552276611328,
+        "mean": 67.44291496276855,
+        "n_nan": 0,
+        "n_inf": 0
+      }
+    }
+  }
+}

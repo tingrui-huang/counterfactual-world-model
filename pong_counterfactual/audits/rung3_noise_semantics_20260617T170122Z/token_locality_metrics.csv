@@ -1,0 +1,11 @@
+metric,value,note
+"corr(token_Hamming, |Δpaddle|) [PURE-paddle branch pairs]",0.38659278530819774,isolates paddle (same ball); >~0.3 = Hamming grades with paddle move
+"corr(codebook_emb_dist, |Δpaddle|) [PURE-paddle]",0.5059937501631042,continuous geometry grades more than discrete tokens
+mean token Hamming /M [PURE-paddle ~1-2 step contrast],3.55327868852459,M=4; a paddle-only change flips this many of 4 tokens
+"mean token Hamming /M [realized step cur->fac, BALL-DOMINATED]",3.028,ball moves every frame -> near-saturated
+frac small PURE paddle moves (<=1 step) flipping ALL tokens,0.7076923076923077,high => paddle change is spread over ALL slots (no paddle-local slot)
+mean adjacent-frame token persistence (1 - flip) /slot,0.26301148600143576,"low => tokens churn frame-to-frame (ball-driven, no temporal stability)"
+per_slot_flip_rate slot0,0.468,fac_vs_cf=0.47 fac_vs_other=0.38 adjacent-frame=0.72 realized-step=0.74
+per_slot_flip_rate slot1,0.468,fac_vs_cf=0.47 fac_vs_other=0.43 adjacent-frame=0.77 realized-step=0.78
+per_slot_flip_rate slot2,0.468,fac_vs_cf=0.47 fac_vs_other=0.40 adjacent-frame=0.74 realized-step=0.76
+per_slot_flip_rate slot3,0.468,fac_vs_cf=0.47 fac_vs_other=0.38 adjacent-frame=0.72 realized-step=0.74

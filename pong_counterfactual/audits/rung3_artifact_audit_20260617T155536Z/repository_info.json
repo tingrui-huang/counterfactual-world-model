@@ -1,0 +1,11 @@
+{
+  "repository_root": "D:\\Users\\trhua\\Research\\counterfactual-world-model",
+  "git_commit": "4941a84390f48a761289f3db634e45ce1013bb0a",
+  "git_branch": "main",
+  "results_root_abs": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results",
+  "results_root_rel": "pong_counterfactual\\results",
+  "audit_out_abs": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\audits\\rung3_artifact_audit_20260617T155536Z",
+  "audit_out_rel": "pong_counterfactual\\audits\\rung3_artifact_audit_20260617T155536Z",
+  "audit_loaded_with_weights_only": false,
+  "weights_only_justification": "trusted repo-generated checkpoints contain numpy/Generator RNG state + a plain config dict; torch>=2.6 weights_only=True cannot unpickle them. Loaded CPU-only, read-only."
+}

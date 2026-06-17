@@ -1,0 +1,78 @@
+{
+  "M4_K64_res84": {
+    "n_lines": 606,
+    "n_valid_rows": 606,
+    "n_malformed": 0,
+    "monotonic_nondecreasing": false,
+    "strictly_increasing": false,
+    "duplicate_steps": [
+      1,
+      50,
+      100,
+      150,
+      200
+    ],
+    "n_decreasing": 1,
+    "n_resumes_detected": 1,
+    "resume_boundaries": [
+      {
+        "index": 5,
+        "from_step": 200,
+        "to_step": 1,
+        "documented": true
+      }
+    ],
+    "all_decreases_are_documented_resumes": true,
+    "last_step": 30000,
+    "expected_final_step": 30000,
+    "reached_expected_final": true,
+    "has_nan_inf": false,
+    "nan_inf_fields": [],
+    "first_loss": 2.802435874938965,
+    "last_loss": 0.6299130916595459,
+    "last_perplexity": 47.153438568115234,
+    "last_lr": 4.4008342803270033e-13
+  },
+  "M8_K128_res84": {
+    "n_lines": 601,
+    "n_valid_rows": 601,
+    "n_malformed": 0,
+    "monotonic_nondecreasing": true,
+    "strictly_increasing": true,
+    "duplicate_steps": [],
+    "n_decreasing": 0,
+    "n_resumes_detected": 0,
+    "resume_boundaries": [],
+    "all_decreases_are_documented_resumes": true,
+    "last_step": 30000,
+    "expected_final_step": 30000,
+    "reached_expected_final": true,
+    "has_nan_inf": false,
+    "nan_inf_fields": [],
+    "first_loss": 2.769866943359375,
+    "last_loss": 0.650193452835083,
+    "last_perplexity": 68.63330841064453,
+    "last_lr": 4.4008342803270033e-13
+  },
+  "M4_K64_res128": {
+    "n_lines": 601,
+    "n_valid_rows": 601,
+    "n_malformed": 0,
+    "monotonic_nondecreasing": true,
+    "strictly_increasing": true,
+    "duplicate_steps": [],
+    "n_decreasing": 0,
+    "n_resumes_detected": 0,
+    "resume_boundaries": [],
+    "all_decreases_are_documented_resumes": true,
+    "last_step": 30000,
+    "expected_final_step": 30000,
+    "reached_expected_final": true,
+    "has_nan_inf": false,
+    "nan_inf_fields": [],
+    "first_loss": 2.696610450744629,
+    "last_loss": 0.21717631816864014,
+    "last_perplexity": 43.409423828125,
+    "last_lr": 4.4008342803270033e-13
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "M4_K64_res84": {
+    "final": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\final.pt",
+    "latest_ckpt": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res84-20260617T152639Z-3-001\\tokenizer_M4_K64_res84\\ckpts\\ckpt_step00030000.pt",
+    "latest_ckpt_step": 30000,
+    "comparison": {
+      "missing_in_b": [],
+      "unexpected_in_b": [],
+      "shape_mismatch": [],
+      "max_abs_diff": 0.0,
+      "identical": true,
+      "verdict": "final.pt model is IDENTICAL to ckpt_step00030000.pt (max abs diff 0)"
+    }
+  },
+  "M8_K128_res84": {
+    "final": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\final.pt",
+    "latest_ckpt": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M8_K128_res84-20260617T152641Z-3-001\\tokenizer_M8_K128_res84\\ckpts\\ckpt_step00030000.pt",
+    "latest_ckpt_step": 30000,
+    "comparison": {
+      "missing_in_b": [],
+      "unexpected_in_b": [],
+      "shape_mismatch": [],
+      "max_abs_diff": 0.0,
+      "identical": true,
+      "verdict": "final.pt model is IDENTICAL to ckpt_step00030000.pt (max abs diff 0)"
+    }
+  },
+  "M4_K64_res128": {
+    "final": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\final.pt",
+    "latest_ckpt": "D:\\Users\\trhua\\Research\\counterfactual-world-model\\pong_counterfactual\\results\\tokenizer_M4_K64_res128-20260617T152640Z-3-001\\tokenizer_M4_K64_res128\\ckpts\\ckpt_step00030000.pt",
+    "latest_ckpt_step": 30000,
+    "comparison": {
+      "missing_in_b": [],
+      "unexpected_in_b": [],
+      "shape_mismatch": [],
+      "max_abs_diff": 0.0,
+      "identical": true,
+      "verdict": "final.pt model is IDENTICAL to ckpt_step00030000.pt (max abs diff 0)"
+    }
+  }
+}

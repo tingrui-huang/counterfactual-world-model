@@ -1,0 +1,50 @@
+[
+  {
+    "Gate": "C1",
+    "Check": "token-ID feature encoding (one-hot/codebook/pre-quant vs raw IDs)",
+    "PASS criterion": "A1 used a VALID encoding; richer encodings tested for missed signal",
+    "Result": "PASS",
+    "Evidence artifact": "feature_comparison.csv",
+    "Notes": "A1 R3 used slot one-hot (VALID, not raw IDs). Best sticky AUC across all encodings = 0.579; no encoding (incl. continuous pre-quant) lifts it meaningfully above the weak oracle ceiling."
+  },
+  {
+    "Gate": "C2",
+    "Check": "oracle noise-identifiable subset vs old a_prev!=a_int",
+    "PASS criterion": "identifiable defined by physical outcome change, not action labels",
+    "Result": "FAIL (old definition vacuous)",
+    "Evidence artifact": "identifiability_comparison.csv",
+    "Notes": "old 'identifiable'=250/250 was ALL tuples (a_prev always NOOP); true oracle-identifiable=122 (free tuples). For 128 stuck tuples the free counterfactual is replay-unreachable -> binary stuck is single-class on the identifiable set."
+  },
+  {
+    "Gate": "C3",
+    "Check": "oracle upper bounds \u2014 is sticky recoverable from the transition at all?",
+    "PASS criterion": "establishes the ceiling before blaming the representation",
+    "Result": "WEAK CEILING",
+    "Evidence artifact": "oracle_upper_bounds.csv",
+    "Notes": "binary stuck: best oracle AUC=0.659 (full ground-truth 4-vec transition ~chance; only |paddle disp| informative) -> WEAK. Realized direction from ground truth acc=0.712 (base 0.40); displacement R2 from gt is high by construction."
+  },
+  {
+    "Gate": "C4",
+    "Check": "why z_t appeared to predict sticky (bias/leakage/permutation)",
+    "PASS criterion": "z_t-only sticky AUC should be explained by confound or be non-significant",
+    "Result": "PASS",
+    "Evidence artifact": "state_label_bias.csv",
+    "Notes": "z_t-only sticky AUC permutation p=0.154; within null -> the prior z_t signal was finite-sample noise, not genuine."
+  },
+  {
+    "Gate": "C5",
+    "Check": "corrected probes on oracle-aware targets, repeated grouped splits + CIs",
+    "PASS criterion": "z_t+z_t1+act vs action-only and vs oracle ceiling; control near chance",
+    "Result": "PASS WITH WARNINGS",
+    "Evidence artifact": "grouped_split_results.csv",
+    "Notes": "binary stuck: best JEPA transition AUC=0.579 (~oracle ceiling 0.66); realized direction: best JEPA acc=0.582 vs oracle 0.712 (base 0.401) -> JEPA cannot resolve the paddle move."
+  },
+  {
+    "Gate": "C6",
+    "Check": "reconcile 7.4% / 51.2% / 0% collision numbers",
+    "PASS criterion": "differences explained by pairing/subset/metric, no contradiction",
+    "Result": "PASS",
+    "Evidence artifact": "collision_metric_reconciliation.md",
+    "Notes": "7.4%=gate fac-vs-other on free (1 step); 51.2%=A1 all-pairs (=stuck rate, trivial); 0%=A1 fac-vs-CF on differing (2 steps). Consistent."
+  }
+]
