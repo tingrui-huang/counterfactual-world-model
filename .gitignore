@@ -41,3 +41,7 @@ pong_counterfactual/**/runs/
 # Frozen Drive-exported run/data dirs copied in for read-only audits (large .pt/.npz,
 # not source — the audit scripts read them on demand and never modify them)
 pong_counterfactual/results/
+
+# Rung 3 reconstruction-AE diagnostic outputs (checkpoints, galleries, metrics —
+# regenerate via run_diagnostic.py; source lives in cjepa_rung3_diag_ae/)
+pong_counterfactual/cjepa_rung3_diag_ae/outputs/
