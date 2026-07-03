@@ -48,3 +48,4 @@ pong_counterfactual/cjepa_rung3_diag_ae/outputs/
 
 # Rung 3 latent-CF experiment outputs (checkpoints, metrics, plots — regenerate)
 pong_counterfactual/cjepa_rung3_latent_cf/outputs/
+pong_counterfactual/cjepa_rung3_latent_cf/oracle_noise_diag/outputs/
