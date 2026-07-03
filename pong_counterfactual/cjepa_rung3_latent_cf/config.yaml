@@ -1,0 +1,27 @@
+# Rung 3 latent-CF experiment config (single source of truth; loaded by all scripts).
+# Pre-registered choices — set BEFORE seeing CF results (see design_audit.md §C).
+
+# --- identity (reused, frozen) ---
+ae_checkpoint: pong_counterfactual/cjepa_rung3_diag_ae/outputs/main/A1/ae_checkpoint.pt
+data_dir: pong_counterfactual/results/data_s0.5-20260617T160801Z-3-001/data_s0.5
+paddle_cols: [4, 6]        # right 2 of the 6 latent columns; MUST match P2 follow-up
+sticky_s: 0.5
+
+# --- discrete noise / mechanism ---
+K: 2                        # discrete-noise cardinality (took-sticky vs not)
+abduction_metric: normalized_latent_mse   # pre-declared distance for argmin_u
+
+# --- transition model (small MLP, comparable to Rung 2 HistModel scale) ---
+hidden: 256
+depth: 2
+lr: 1.0e-3
+weight_decay: 0.0
+batch: 256
+base_steps: 1500            # warm-up single-head fit before EM
+em_rounds: 8
+m_steps_per_round: 400
+seeds: [0, 1, 2]            # small seed set for stability
+
+# --- eval ---
+n_eval_tuples: 250          # the fixed AE-diagnostic eval pool
+iv_noise_seeds: 8           # fresh-u draws averaged for the IV baseline
