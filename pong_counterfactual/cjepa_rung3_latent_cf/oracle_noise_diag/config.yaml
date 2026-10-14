@@ -1,0 +1,12 @@
+# Oracle-noise diagnostic config. Inherits identity from the parent latent-CF config;
+# the only new knob is the supervised-noise training (no hard-EM).
+oracle_noise: sticky_fired          # trusted two-probe stuck label (simulator-derived)
+K: 2                                 # {0=free, 1=stuck} — matches the parent K
+hidden: 256
+depth: 2
+lr: 1.0e-3
+batch: 256
+steps: 3000                          # single supervised run per seed (no EM)
+seeds: [0, 1, 2]
+iv_noise_seeds: 8
+abduction_metric: normalized_latent_mse
